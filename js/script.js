@@ -63,14 +63,20 @@ async function fetchMockData() {
     return [];
   }
 }
-
-// Function to create HTML elements for each post
 function createPostElement(post) {
   const postElement = document.createElement("article");
   postElement.classList.add("post");
 
   // Create elements for post content
-  const usernameElement = document.createElement("h3");
+  const userInfoElement = document.createElement("div");
+  userInfoElement.classList.add("user-info");
+
+  const avatarElement = document.createElement("img");
+  avatarElement.src = post.avatar;
+  avatarElement.alt = "Avatar";
+  avatarElement.classList.add("avatar");
+
+  const usernameElement = document.createElement("span");
   usernameElement.textContent = post.username;
 
   const imageElement = document.createElement("img");
@@ -81,7 +87,9 @@ function createPostElement(post) {
   captionElement.textContent = post.caption;
 
   // Append elements to postElement
-  postElement.appendChild(usernameElement);
+  userInfoElement.appendChild(avatarElement);
+  userInfoElement.appendChild(usernameElement);
+  postElement.appendChild(userInfoElement);
   postElement.appendChild(imageElement);
   postElement.appendChild(captionElement);
 

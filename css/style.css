@@ -286,6 +286,51 @@ body.dark {
   display: none;
 }
 
+/* Start of posts */
+
+/* Add or adjust styles in your CSS file */
+
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 600px;
+  /* Adjust as needed */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.user-info img {
+  width: 40px;
+  /* Adjust avatar size */
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.caption {
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 768px) {
   #sidebarOpen {
     font-size: 25px;
