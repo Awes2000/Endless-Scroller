@@ -71,9 +71,8 @@ function createPostElement(post) {
   const userInfoElement = document.createElement("div");
   userInfoElement.classList.add("user-info");
 
-  const avatarElement = document.createElement("img");
-  avatarElement.src = post.avatar;
-  avatarElement.alt = "Avatar";
+  const avatarElement = document.createElement("p");
+  avatarElement.innerText = post.avatar;
   avatarElement.classList.add("avatar");
 
   const usernameElement = document.createElement("span");

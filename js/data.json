@@ -2,8 +2,8 @@
   {
     "id": 1,
     "username": "user123",
-    "avatar": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "image": "Female",
+    "avatar": "Female\n\n",
+    "image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "caption": "This is the first post."
   },
   {
