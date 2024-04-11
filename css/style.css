@@ -301,6 +301,7 @@ body.dark {
 
 .post img {
   max-width: 800px;
+  min-height: 200px;
   object-fit: contain;
   height: auto;
   border-radius: 5%;

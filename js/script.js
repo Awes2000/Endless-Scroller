@@ -100,10 +100,51 @@ async function displayPosts() {
   const postSection = document.getElementById("postSection");
   const mockData = await fetchMockData();
 
-  mockData.forEach((post) => {
+  for (let i = 0; i < 5; i++) {
+    let post = mockData[i];
     const postElement = createPostElement(post);
     postSection.appendChild(postElement);
-  });
+  }
+  observeBottom();
 }
+
+// Function to observe when user scrolls to the bottom of the page
+function observeBottom() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        console.log("test");
+        displayPosts();
+      }
+    },
+    { threshold: 1.0 }
+  );
+
+  // Target the last post element
+  const posts = document.getElementsByClassName("post");
+  const lastPost = posts[posts.length - 1];
+  if (lastPost) {
+    observer.observe(lastPost);
+  }
+}
+
+// Function to load more data
+async function loadMoreData() {
+  try {
+    // Fetch more data from the server
+    const response = await fetch("data.json");
+    const newData = await response.json();
+
+    // Append new posts to the existing ones
+    newData.forEach((post) => {
+      const postElement = createPostElement(post);
+      postSection.appendChild(postElement);
+    });
+  } catch (error) {
+    console.error("Error loading more data:", error);
+  }
+}
+
+// Call the function to observe when the user scrolls to the bottom
 
 displayPosts();
